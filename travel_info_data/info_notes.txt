@@ -1,0 +1,62 @@
+
+Date	City	Activities	Transport / Flight	Accommodation
+17-May-26	Manila → Istanbul	Departure from Ninoy Aquino International Airport; international flight to Istanbul	J0085	In flight
+18-May-26	Vienna, Austria	Arrival in Vienna; transfer to Airbnb; evening walk around Stephansplatz and visit St. Stephen’s Cathedral	J1883	Airbnb – Margaretengirtel 6 1, Vienna 1050, Austria
+
+departure 21:25
+
+
+we're arriving in Vienna on May 18 - 9:15am. we're going to store our luggage in the following address. We'll pick them up later in the day when we can already check in the airbnb.
+Bounce Luggage storage Vienna Prince Mobile (Near Südtiroler Platz Station)
+Wiednergürtel 48/IV, Vienna, 1040
+
+Vienna Airbnb https://maps.app.goo.gl/bAQYMCvSrB3vRvXn7
+
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-20	Wed	07:34	Vienna → Budapest	Train	RegioJet RJ 1065	Vienna Central Train Station — 07:34	Budapest Déli — 10:14	2h 40m	Trainline: https://app.trainline.com/QrswMpOb12b
+
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-20	Wed	17:45	Budapest → Vienna	Train	RegioJet RJ 1068 (same-day return)	Budapest Déli — 17:45	Vienna Central Train Station — 20:27	2h 42m	Trainline: https://app.trainline.com/MeSYEbQb12b
+
+
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-22	Fri	06:39	Vienna → Prague	Train	RegioJet RJ 1030	Vienna Central Train Station — 06:39	Praha hl.n. — 10:56	4h 17m	Trainline: https://app.trainline.com/K0MINBRb12b
+
+Prague Aibnb https://maps.app.goo.gl/UcKWdy4NRJWvL3eZA
+
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-23	Sat	08:31	Prague → Dresden	Train	Deutsche Bahn 178 (day-trip outbound)	Praha hl.n. — 08:31	Dresden Hbf — 10:50	2h 19m	Trainline: https://app.trainline.com/KXTU6ZSb12b
+
+
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-23	Sat	19:10	Dresden → Prague	Train	Deutsche Bahn 385 (day-trip return)	Dresden Hbf — 19:10	Praha hl.n. — 21:25	2h 15m	Trainline: https://app.trainline.com/Uo4dOhUb12b
+
+<Place here flight to Stockholm. refer to Norwegian Air Manolet.pdf>
+
+Date	City	Activities	Transport / Flight	Accommodation
+30-May-26	Stockholm → Istanbul	Transfer to Stockholm Arlanda Airport; departure from Schengen area	J1796	In flight
+31-May-26	Istanbul → Manila	Return flight to Manila	J0084	—
+
+
+Stockholm hotel https://maps.app.goo.gl/QzqTafk4EjpTVc577
+
+
+Appendix Notes:
+
+Hi! My train from Vienna Central Train Station arrives at Budapest Déli at 10:14 am on Wednesday May 20 2026. Download the Trainline app for real-time updates.
+https://app.trainline.com/QrswMpOb12b
+
+Hi! My train from Budapest Déli arrives at Vienna Central Train Station at 8:27 pm on Wednesday May 20 2026. Download the Trainline app for real-time updates.
+https://app.trainline.com/MeSYEbQb12b
+
+Hi! My train from Vienna Central Train Station arrives at Praha hl.n. at 10:56 am on Friday May 22 2026. Download the Trainline app for real-time updates.
+https://app.trainline.com/K0MINBRb12b
+
+Hi! My train from Praha hl.n. arrives at Dresden Hbf at 10:50 am on Saturday May 23 2026. Download the Trainline app for real-time updates.
+https://app.trainline.com/KXTU6ZSb12b
+
+Hi! My train from Dresden Hbf arrives at Praha hl.n. at 9:25 pm on Saturday May 23 2026. Download the Trainline app for real-time updates.
+https://app.trainline.com/Uo4dOhUb12b
+
+
+
