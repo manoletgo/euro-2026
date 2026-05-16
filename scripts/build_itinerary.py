@@ -15,6 +15,7 @@ sync with CLAUDE.md.
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import quote
+from xml.sax.saxutils import escape as xml_escape
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
@@ -387,7 +388,13 @@ def build_pdf(path: Path) -> None:
     )
 
     def cellp(text: str) -> Paragraph:
-        return Paragraph(str(text).replace("\n", "<br/>") if text else "", cell_style)
+        if not text:
+            return Paragraph("", cell_style)
+        # Escape XML specials first (&, <, >) so URLs like
+        # ?api=1&origin=... aren't mangled into &origin;=... by ReportLab's
+        # entity parser. Insert <br/> after escaping so our line breaks survive.
+        safe = xml_escape(str(text)).replace("\n", "<br/>")
+        return Paragraph(safe, cell_style)
 
     table_data = [[Paragraph(h, header_style) for h in HEADERS]]
     table_data.extend([[cellp(c) for c in row] for row in ROWS])
