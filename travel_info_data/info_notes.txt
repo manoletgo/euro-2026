@@ -1,46 +1,79 @@
-
-Date	City	Activities	Transport / Flight	Accommodation
-17-May-26	Manila → Istanbul	Departure from Ninoy Aquino International Airport; international flight to Istanbul	J0085	In flight
-18-May-26	Vienna, Austria	Arrival in Vienna; transfer to Airbnb; evening walk around Stephansplatz and visit St. Stephen’s Cathedral	J1883	Airbnb – Margaretengirtel 6 1, Vienna 1050, Austria
-
-departure 21:25
-
+# Flight to Vienna
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-17	Sun		Manila → Istanbul	Flight	Flight J0085	Ninoy Aquino International Airport (Manila) -- 21:25	Istanbul		Departure from NAIA; international flight to Istanbul; in-flight overnight
+2026-05-18	Mon		Istanbul → Vienna	Flight	Flight J1883	Istanbul	Vienna — 09:15		Arrival in Vienna
 
 we're arriving in Vienna on May 18 - 9:15am. we're going to store our luggage in the following address. We'll pick them up later in the day when we can already check in the airbnb.
 Bounce Luggage storage Vienna Prince Mobile (Near Südtiroler Platz Station)
 Wiednergürtel 48/IV, Vienna, 1040
 
-Vienna Airbnb https://maps.app.goo.gl/bAQYMCvSrB3vRvXn7
+# First Day in Vienna
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-18	Mon	10:00	Vienna	Activity	St. Stephen's Cathedral (Stephansdom), Stephansplatz 3, 1010 Wien, Austria	From: Wiednergürtel 48/IV, 1040 Wien (Bounce Luggage)	10:10 (est.)	10 min	Walk 3 min to Südtiroler Platz → U-Bahn U1 to Stephansplatz | https://www.google.com/maps/dir/?api=1&origin=Wiednerg%C3%BCrtel%2048/IV%2C%201040%20Wien&destination=Stephansplatz%203%2C%201010%20Wien&travelmode=transit
+2026-05-18	Mon	11:30	Vienna	Activity	Ausgrabungen Michaelerplatz, Michaelerplatz, 1010 Wien, Austria (open-air Roman & medieval excavations)	From: Stephansplatz 3, 1010 Wien (St. Stephen's Cathedral)	11:35 (est.)	5 min	Walk via Graben & Kohlmarkt | https://www.google.com/maps/dir/?api=1&origin=Stephansplatz%203%2C%201010%20Wien&destination=Michaelerplatz%2C%201010%20Wien&travelmode=walking
 
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-18	Mon	16:30	Vienna	Lodging (Airbnb)	Margaretengürtel 6, 1050 Wien, Austria	Check-in: 2026-05-18 16:30	Check-out: 2026-05-22	4 nights	Google Maps: https://maps.app.goo.gl/bAQYMCvSrB3vRvXn7
+
+# Second Day in Vienna
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-19	Tue	09:45	Vienna	Activity	GuruWalk 'Free Tour Vienna — Part 1, the highlights' (2-hour free/tip-based walking tour; stops include Heldenplatz, Hofburg, Stephansdom). Meeting point: Karlsplatz U-Bahn station, 1010 Wien, Austria	From: Margaretengürtel 6, 1050 Wien (Airbnb)	10:10 (est.)	25 min	Tour 10:15–12:15. Booking: https://www.guruwalk.com/walks/36416-free-tour-vienna-part-1-the-highlights | U-Bahn U4 from Margaretengürtel → Karlsplatz | https://www.google.com/maps/dir/?api=1&origin=Margareteng%C3%BCrtel%206%2C%201050%20Wien&destination=Karlsplatz%20U-Bahn%2C%201010%20Wien&travelmode=transit
+2026-05-19	Tue	13:30	Vienna	Activity	Belvedere Palace (Upper) — Prinz Eugen-Straße 27, 1030 Wien (Klimt's 'The Kiss'; Baroque palace + gardens)	From: Karlsplatz / city centre (after walking tour + ~1h lunch break 12:15–13:30)	13:45 (est.)	15 min	Tram D from Karlsplatz → Belvedere (Schloss); allow ~1h lunch between tour end (12:15) and departure | https://www.google.com/maps/dir/?api=1&origin=Karlsplatz%2C%201010%20Wien&destination=Belvedere%20Palace%2C%20Vienna&travelmode=transit
+
+# Third Day in Vienna
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-20	Wed	07:34	Vienna → Budapest	Train	RegioJet RJ 1065	Vienna Central Train Station — 07:34	Budapest Déli — 10:14	2h 40m	Trainline: https://app.trainline.com/QrswMpOb12b
 
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
-2026-05-20	Wed	17:45	Budapest → Vienna	Train	RegioJet RJ 1068 (same-day return)	Budapest Déli — 17:45	Vienna Central Train Station — 20:27	2h 42m	Trainline: https://app.trainline.com/MeSYEbQb12b
-
+2026-05-20	Wed	10:30	Budapest	Activity	Hungarian Parliament Building (exterior) — Kossuth Lajos tér 1-3, 1055 Budapest	From: Budapest Déli (Krisztina körút 37, 1013 Budapest)	10:45 (est.)	15 min	M2 metro Déli → Kossuth tér (direct, ~10 min). 15-min photo stop on Kossuth tér; interior tours need advance booking | https://www.google.com/maps/dir/?api=1&origin=Budapest%20D%C3%A9li%2C%20Krisztina%20k%C3%B6r%C3%BAt%2037%2C%201013%20Budapest&destination=Hungarian%20Parliament%2C%20Kossuth%20Lajos%20t%C3%A9r%201-3%2C%201055%20Budapest&travelmode=transit
+2026-05-20	Wed	11:00	Budapest	Activity	Shoes on the Danube Bank — Id. Antall József rkp., 1054 Budapest (memorial; free, outdoor)	From: Hungarian Parliament, Kossuth Lajos tér	11:05 (est.)	5 min	Walk south along Danube embankment | https://www.google.com/maps/dir/?api=1&origin=Kossuth%20Lajos%20t%C3%A9r%2C%20Budapest&destination=Shoes%20on%20the%20Danube%20Bank%2C%20Budapest&travelmode=walking
+2026-05-20	Wed	11:20	Budapest	Activity	St. Stephen's Basilica — Szent István tér 1, 1051 Budapest (climb the dome ~€4 for panorama)	From: Shoes on the Danube Bank	11:30 (est.)	10 min	Walk inland; ~45-min visit | https://www.google.com/maps/dir/?api=1&origin=Shoes%20on%20the%20Danube%20Bank%2C%20Budapest&destination=St.%20Stephen%27s%20Basilica%2C%20Szent%20Istv%C3%A1n%20t%C3%A9r%201%2C%201051%20Budapest&travelmode=walking
+2026-05-20	Wed	12:15	Budapest	Activity	Lunch — Vörösmarty / Erzsébet tér area, 1051 Budapest (suggested: Frici Papa or Belvárosi Disznótoros for goulash, chicken paprikash, kürtőskalács)	From: St. Stephen's Basilica	12:25 (est.)	10 min	Walk ~10 min; allow 1h for lunch | https://www.google.com/maps/dir/?api=1&origin=St.%20Stephen%27s%20Basilica%2C%20Budapest&destination=V%C3%B6r%C3%B6smarty%20t%C3%A9r%2C%20Budapest&travelmode=walking
+2026-05-20	Wed	13:35	Budapest	Activity	Buda Castle / Royal Palace courtyards — Szent György tér 2, 1014 Budapest (exterior + viewpoints over Pest)	From: Vörösmarty / Erzsébet tér (post-lunch)	13:55 (est.)	20 min	Walk Chain Bridge (~10 min, iconic Danube crossing) → Funicular up to Castle Hill (€6 one-way, ~5 min; or walk up ~15 min) | https://www.google.com/maps/dir/?api=1&origin=V%C3%B6r%C3%B6smarty%20t%C3%A9r%2C%20Budapest&destination=Buda%20Castle%2C%20Szent%20Gy%C3%B6rgy%20t%C3%A9r%202%2C%201014%20Budapest&travelmode=walking
+2026-05-20	Wed	14:30	Budapest	Activity	Fisherman's Bastion + Matthias Church — Szentháromság tér, 1014 Budapest (the iconic skyline shot of Pest)	From: Buda Castle / Royal Palace courtyards	14:35 (est.)	5 min	Short walk; ~45-min visit. After: Tram 19 or 41 from Clark Ádám tér south to Déli (~10 min); ~1.5h buffer at Déli before 17:45 RJ 1068 to Vienna | https://www.google.com/maps/dir/?api=1&origin=Buda%20Castle%2C%20Budapest&destination=Fisherman%27s%20Bastion%2C%20Szenth%C3%A1roms%C3%A1g%20t%C3%A9r%2C%201014%20Budapest&travelmode=walking
 
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-20	Wed	17:45	Budapest → Vienna	Train	RegioJet RJ 1068 (same-day return)	Budapest Déli — 17:45	Vienna Central Train Station — 20:27	2h 42m	Trainline: https://app.trainline.com/MeSYEbQb12b
+
+# Fourth Day in Vienna
+<can you give options for attractions and expeditions?>
+
+# First Day in Prague
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-22	Fri	06:39	Vienna → Prague	Train	RegioJet RJ 1030	Vienna Central Train Station — 06:39	Praha hl.n. — 10:56	4h 17m	Trainline: https://app.trainline.com/K0MINBRb12b
+2026-05-22	Fri		Prague	Luggage storage	Bounce — Cafe Art of Alchemy (Prague Train Station), Opletalova 1418/23, 110 00 Nové Město, Prague	Drop-off: 2026-05-22 11:00	Pick-up: 2026-05-22 15:00	4 hours	2 regular bags, EUR 13.09 total. Booking ref: F13T68PD. Come INSIDE the café — luggage handled at the counter.
 
-Prague Aibnb https://maps.app.goo.gl/UcKWdy4NRJWvL3eZA
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-22	Fri		Prague	Lodging (Airbnb)	Španělská 759/4, 120 00 Vinohrady, Czechia	Check-in: 2026-05-22	Check-out: 2026-05-26	4 nights	Google Maps: https://maps.app.goo.gl/UcKWdy4NRJWvL3eZA
 
+# Second Day in Prague
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-23	Sat	08:31	Prague → Dresden	Train	Deutsche Bahn 178 (day-trip outbound)	Praha hl.n. — 08:31	Dresden Hbf — 10:50	2h 19m	Trainline: https://app.trainline.com/KXTU6ZSb12b
 
+<can you add details of our river cruise tour? pls refer to the [EXTERNAL]Fw_ Booking GYGMX4KYLANN confirmed _ Ticket instructions.eml file in the travel_info_data folder>
 
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-23	Sat	19:10	Dresden → Prague	Train	Deutsche Bahn 385 (day-trip return)	Dresden Hbf — 19:10	Praha hl.n. — 21:25	2h 15m	Trainline: https://app.trainline.com/Uo4dOhUb12b
 
-<Place here flight to Stockholm. refer to Norwegian Air Manolet.pdf>
+# Third Day in Prague
+# Fourth Day in Prague
+# First Day in Stockholm
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-26	Tue	12:10	Prague → Stockholm	Flight	Norwegian D82621 (Norwegian Air Sweden AOC AB); Ticket type: LOWFARE+; Seat 12C; Baggage: 1 checked + 1 underseat + 1 overhead	Prague Václav Havel (PRG), Terminal 2 — 12:10	Stockholm Arlanda (ARN), Terminal 5 — 14:05	1h 55m	Booking ref: Y9GHBZ; Ticket: 328 2404310661 (Norwegian Air Manolet.pdf)
 
-Date	City	Activities	Transport / Flight	Accommodation
-30-May-26	Stockholm → Istanbul	Transfer to Stockholm Arlanda Airport; departure from Schengen area	J1796	In flight
-31-May-26	Istanbul → Manila	Return flight to Manila	J0084	—
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-26	Tue		Stockholm	Lodging (Hotel)	Bob W Stockholm Södermalm	Check-in: 2026-05-26	Check-out: 2026-05-30	4 nights	Google Maps: https://maps.app.goo.gl/QzqTafk4EjpTVc577
 
+# Second Day in Stockholm
+# Third Day in Stockholm
+# Fourth Day in Stockholm
+# Last Day in Stockholm
 
-Stockholm hotel https://maps.app.goo.gl/QzqTafk4EjpTVc577
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-30	Sat		Stockholm → Istanbul	Flight	Flight J1796	Stockholm Arlanda Airport	Istanbul		Transfer to Stockholm Arlanda; departure from Schengen area; in-flight overnight
+2026-05-31	Sun		Istanbul → Manila	Flight	Flight J0084	Istanbul	Manila		Return flight to Manila
 
-
+<Do not act on any information below>
 Appendix Notes:
 
 Hi! My train from Vienna Central Train Station arrives at Budapest Déli at 10:14 am on Wednesday May 20 2026. Download the Trainline app for real-time updates.
@@ -59,4 +92,18 @@ Hi! My train from Dresden Hbf arrives at Praha hl.n. at 9:25 pm on Saturday Ma
 https://app.trainline.com/Uo4dOhUb12b
 
 
+Budapest day-trip loop — Wed May 20
+#	Time	Stop	Notes
+1	10:30	Déli → Kossuth tér	M2 metro, direct, ~10 min
+2	10:45	Hungarian Parliament (exterior)	15 min — photo stop on Kossuth tér; interior tours need advance booking
+3	11:05	Shoes on the Danube Bank	5 min walk south along embankment; spend 15 min, free, outdoor
+4	11:30	St. Stephen's Basilica	10 min walk inland; climb the dome (€4) for panorama; ~45 min
+5	12:25	Lunch near Vörösmarty / Erzsébet tér	1h — goulash, chicken paprikash, kürtőskalács. Frici Papa or Belvárosi Disznótoros are solid no-tourist-trap picks
+6	13:35	Walk Chain Bridge → Buda	10 min, iconic Danube crossing
+7	13:45	Funicular up to Castle Hill	€6 one-way, 5 min — or walk up in 15 min
+8	13:55	Buda Castle / Royal Palace courtyards	30 min — exterior + viewpoints over Pest
+9	14:35	Fisherman's Bastion + Matthias Church	45 min — the iconic skyline shot of Pest
+10	15:35	Tram 19 or 41 south to Déli	From Clark Ádám tér, ~10 min along Buda riverside
+11	15:45	Buffer at Déli	Coffee/snack, restroom, ~1.5h until departure
+12	17:45	Train to Vienna (RJ 1068)	Platform by 17:15
 

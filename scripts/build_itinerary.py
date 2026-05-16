@@ -12,7 +12,9 @@ ROWS list below and rerun. Keep the schema, type categories, and colors in
 sync with CLAUDE.md.
 """
 
+from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
@@ -44,6 +46,7 @@ TYPE_COLORS = {
     "Lodging":         "E2EFDA",
     "Activity":        "FCE4D6",
     "Luggage storage": "EDEDED",
+    "Tips":            "E4D7F2",
 }
 
 HEADER_FILL = "305496"
@@ -51,10 +54,25 @@ HEADER_FILL = "305496"
 # Column widths (in mm for pdf, scaled for xlsx).
 COL_WIDTHS_MM = [22, 12, 22, 32, 22, 60, 50, 50, 18, 70]
 
+
+def gmaps_url(origin: str, destination: str, mode: str = "transit") -> str:
+    """Build a Google Maps directions URL per the CLAUDE.md convention."""
+    return (
+        "https://www.google.com/maps/dir/?api=1"
+        f"&origin={quote(origin)}"
+        f"&destination={quote(destination)}"
+        f"&travelmode={mode}"
+    )
+
+
+# Common origins reused across activity rows.
+BOUNCE_ADDR = "Wiednergürtel 48/IV, 1040 Wien"
+VIENNA_AIRBNB = "Margaretengürtel 6, 1050 Wien"
+
 ROWS = [
     ["2026-05-17", "Sun", "", "Manila → Istanbul", "Flight",
      "Flight J0085",
-     "Ninoy Aquino International Airport (Manila)",
+     "Ninoy Aquino International Airport (Manila) — 21:25",
      "Istanbul", "",
      "Departure from NAIA; international flight to Istanbul; in-flight overnight"],
     ["2026-05-18", "Mon", "", "Istanbul → Vienna", "Flight",
@@ -65,29 +83,144 @@ ROWS = [
      "Bounce Luggage Storage – Vienna Prince Mobile (near Südtiroler Platz Station), Wiednergürtel 48/IV, Vienna 1040",
      "", "", "",
      "Drop luggage on arrival (~9:15 am); pick up later once Airbnb check-in is available"],
-    ["2026-05-18", "Mon", "", "Vienna", "Lodging (Airbnb)",
-     "Margaretengürtel 6, 1050 Wien, Austria",
-     "Check-in: 2026-05-18", "Check-out: 2026-05-22", "4 nights",
-     "Google Maps: https://maps.app.goo.gl/bAQYMCvSrB3vRvXn7"],
-    ["2026-05-18", "Mon", "Evening", "Vienna", "Activity",
-     "Walk around Stephansplatz; visit St. Stephen's Cathedral",
+    ["2026-05-18", "Mon", "", "Vienna", "Tips",
+     "Wiener Linien 72-hour pass (~€17.10) — U-Bahn + tram + bus across all zones",
      "", "", "",
-     "Evening activity after Airbnb check-in"],
+     "Attractions: Sisi Ticket (€44) bundles Hofburg Imperial Apartments + Schönbrunn + Imperial Furniture; Vienna Pass for heavy sightseeing; Vienna State Opera standing-room (€4-15) "
+     "| Explore: Sachertorte at Café Sacher, Wiener Schnitzel at Figlmüller, Naschmarkt food market, classic coffeehouses (Café Central, Hawelka)"],
+    # Resolves <we're planning to go to st stephen's cahedral and followed by
+    # Ausgrabungen michaelerplatz> placeholder. Split into two routed activity
+    # rows per the Activity-routing convention.
+    ["2026-05-18", "Mon", "10:00", "Vienna", "Activity",
+     "St. Stephen's Cathedral (Stephansdom), Stephansplatz 3, 1010 Wien, Austria",
+     f"From: {BOUNCE_ADDR} (Bounce Luggage)",
+     "10:10 (est.)", "10 min",
+     "Walk 3 min to Südtiroler Platz → U-Bahn U1 to Stephansplatz | "
+     + gmaps_url(BOUNCE_ADDR, "Stephansplatz 3, 1010 Wien", "transit")],
+    ["2026-05-18", "Mon", "11:30", "Vienna", "Activity",
+     "Ausgrabungen Michaelerplatz, Michaelerplatz, 1010 Wien, Austria (open-air Roman & medieval excavations)",
+     "From: Stephansplatz 3, 1010 Wien (St. Stephen's Cathedral)",
+     "11:35 (est.)", "5 min",
+     "Walk via Graben & Kohlmarkt | "
+     + gmaps_url("Stephansplatz 3, 1010 Wien", "Michaelerplatz, 1010 Wien", "walking")],
+    ["2026-05-18", "Mon", "16:30", "Vienna", "Lodging (Airbnb)",
+     "Margaretengürtel 6, 1050 Wien, Austria",
+     "Check-in: 2026-05-18 16:30", "Check-out: 2026-05-22", "4 nights",
+     "Google Maps: https://maps.app.goo.gl/bAQYMCvSrB3vRvXn7"],
+    # Resolves <2026-05-19 walking tour ... then Belvedere after lunch> placeholder.
+    ["2026-05-19", "Tue", "09:45", "Vienna", "Activity",
+     "GuruWalk 'Free Tour Vienna — Part 1, the highlights' (2-hour free/tip-based walking tour; stops include Heldenplatz, Hofburg, Stephansdom). Meeting point: Karlsplatz U-Bahn station, 1010 Wien, Austria",
+     f"From: {VIENNA_AIRBNB} (Airbnb)",
+     "10:10 (est.)", "25 min",
+     "Tour 10:15–12:15. Booking: https://www.guruwalk.com/walks/36416-free-tour-vienna-part-1-the-highlights | U-Bahn U4 from Margaretengürtel → Karlsplatz | "
+     + gmaps_url(VIENNA_AIRBNB, "Karlsplatz U-Bahn, 1010 Wien", "transit")],
+    ["2026-05-19", "Tue", "13:30", "Vienna", "Activity",
+     "Belvedere Palace (Upper) — Prinz Eugen-Straße 27, 1030 Wien (Klimt's 'The Kiss'; Baroque palace + gardens)",
+     "From: Karlsplatz / city centre (after walking tour + ~1h lunch break 12:15–13:30)",
+     "13:45 (est.)", "15 min",
+     "Tram D from Karlsplatz → Belvedere (Schloss); allow ~1h lunch between tour end (12:15) and departure | "
+     + gmaps_url("Karlsplatz, 1010 Wien", "Belvedere Palace, Vienna", "transit")],
     ["2026-05-20", "Wed", "07:34", "Vienna → Budapest", "Train",
      "RegioJet RJ 1065",
      "Vienna Central Train Station — 07:34",
      "Budapest Déli — 10:14", "2h 40m",
      "Trainline: https://app.trainline.com/QrswMpOb12b"],
+    ["2026-05-20", "Wed", "", "Budapest", "Tips",
+     "BKV 24-hour ticket (~HUF 2,500 / €6.30) — metro + tram + bus; pair with M2 line from Déli station",
+     "", "", "",
+     "Attractions: Budapest Card (~€36/24h) bundles transit + 30+ sights + 2 thermal baths; Buda Castle district (Fisherman's Bastion outside is free); Széchenyi or Gellért Thermal Baths (bring swimsuit) "
+     "| Explore: lángos at Karaván Street Food, goulash + kürtőskalács chimney cake, ruin bars in Jewish Quarter (Szimpla Kert), Parliament view from Pest embankment at sunset"],
+    # Resolves <can you add this day-trip loop?> placeholder. The user's 12-step
+    # loop is captured as 6 Activity rows (one per attraction stop); pure transit
+    # and buffer steps are folded into the routing notes.
+    ["2026-05-20", "Wed", "10:30", "Budapest", "Activity",
+     "Hungarian Parliament Building (exterior) — Kossuth Lajos tér 1-3, 1055 Budapest",
+     "From: Budapest Déli (Krisztina körút 37, 1013 Budapest)",
+     "10:45 (est.)", "15 min",
+     "M2 metro Déli → Kossuth tér (direct, ~10 min). 15-min photo stop on Kossuth tér; interior tours need advance booking | "
+     + gmaps_url("Budapest Déli, Krisztina körút 37, 1013 Budapest", "Hungarian Parliament, Kossuth Lajos tér 1-3, 1055 Budapest", "transit")],
+    ["2026-05-20", "Wed", "11:00", "Budapest", "Activity",
+     "Shoes on the Danube Bank — Id. Antall József rkp., 1054 Budapest (memorial; free, outdoor)",
+     "From: Hungarian Parliament, Kossuth Lajos tér",
+     "11:05 (est.)", "5 min",
+     "Walk south along Danube embankment | "
+     + gmaps_url("Kossuth Lajos tér, Budapest", "Shoes on the Danube Bank, Budapest", "walking")],
+    ["2026-05-20", "Wed", "11:20", "Budapest", "Activity",
+     "St. Stephen's Basilica — Szent István tér 1, 1051 Budapest (climb the dome ~€4 for panorama)",
+     "From: Shoes on the Danube Bank",
+     "11:30 (est.)", "10 min",
+     "Walk inland; ~45-min visit | "
+     + gmaps_url("Shoes on the Danube Bank, Budapest", "St. Stephen's Basilica, Szent István tér 1, 1051 Budapest", "walking")],
+    ["2026-05-20", "Wed", "12:15", "Budapest", "Activity",
+     "Lunch — Vörösmarty / Erzsébet tér area, 1051 Budapest (suggested: Frici Papa or Belvárosi Disznótoros for goulash, chicken paprikash, kürtőskalács)",
+     "From: St. Stephen's Basilica",
+     "12:25 (est.)", "10 min",
+     "Walk ~10 min; allow 1h for lunch | "
+     + gmaps_url("St. Stephen's Basilica, Budapest", "Vörösmarty tér, Budapest", "walking")],
+    ["2026-05-20", "Wed", "13:35", "Budapest", "Activity",
+     "Buda Castle / Royal Palace courtyards — Szent György tér 2, 1014 Budapest (exterior + viewpoints over Pest)",
+     "From: Vörösmarty / Erzsébet tér (post-lunch)",
+     "13:55 (est.)", "20 min",
+     "Walk Chain Bridge (~10 min, iconic Danube crossing) → Funicular up to Castle Hill (€6 one-way, ~5 min; or walk up ~15 min) | "
+     + gmaps_url("Vörösmarty tér, Budapest", "Buda Castle, Szent György tér 2, 1014 Budapest", "walking")],
+    ["2026-05-20", "Wed", "14:30", "Budapest", "Activity",
+     "Fisherman's Bastion + Matthias Church — Szentháromság tér, 1014 Budapest (the iconic skyline shot of Pest)",
+     "From: Buda Castle / Royal Palace courtyards",
+     "14:35 (est.)", "5 min",
+     "Short walk; ~45-min visit. After: Tram 19 or 41 from Clark Ádám tér south to Déli (~10 min); ~1.5h buffer at Déli before 17:45 RJ 1068 to Vienna | "
+     + gmaps_url("Buda Castle, Budapest", "Fisherman's Bastion, Szentháromság tér, 1014 Budapest", "walking")],
     ["2026-05-20", "Wed", "17:45", "Budapest → Vienna", "Train",
      "RegioJet RJ 1068 (same-day return)",
      "Budapest Déli — 17:45",
      "Vienna Central Train Station — 20:27", "2h 42m",
      "Trainline: https://app.trainline.com/MeSYEbQb12b"],
+    # Resolves <can you give options for attractions and expeditions?> placeholder.
+    # Position infers: free day in Vienna, May 21 (between May 20 evening return
+    # arrival 20:27 and May 22 06:39 departure to Prague). Belvedere dropped
+    # from this list — now confirmed for May 19. Pick one (or two short ones)
+    # and delete the rest.
+    ["2026-05-21", "Thu", "09:30", "Vienna (Option 1/4)", "Activity",
+     "Schönbrunn Palace & Gardens — Schönbrunner Schloßstraße 47, 1130 Wien (UNESCO Habsburg residence; Gloriette views)",
+     f"From: {VIENNA_AIRBNB} (Airbnb)",
+     "09:45 (est.)", "15 min",
+     "U-Bahn U4 from Margaretengürtel → Schönbrunn (3 stops) | "
+     + gmaps_url(VIENNA_AIRBNB, "Schönbrunn Palace, Vienna", "transit")],
+    ["2026-05-21", "Thu", "10:00", "Vienna (Option 2/4)", "Activity",
+     "Hofburg complex + Albertina Museum — Heldenplatz/Albertinaplatz 1, 1010 Wien (Imperial Apartments interior, Sisi Museum, Treasury; Albertina art museum 2 min walk). Distinct from May 19 walking-tour exterior pass.",
+     f"From: {VIENNA_AIRBNB} (Airbnb)",
+     "10:20 (est.)", "20 min",
+     "U-Bahn U4 to Karlsplatz → walk 8 min | "
+     + gmaps_url(VIENNA_AIRBNB, "Hofburg, Vienna", "transit")],
+    ["2026-05-21", "Thu", "08:30", "Vienna → Bratislava (Option 3/4)", "Activity",
+     "Day-trip to Bratislava, Slovakia — walkable Old Town + Bratislava Castle (~1h train each way; full day)",
+     f"From: {VIENNA_AIRBNB} (Airbnb)",
+     "09:45 (est.)", "1h 15m",
+     "Transit to Wien Hauptbahnhof → REX 1 train to Bratislava hl. st. (~1h) | "
+     + gmaps_url(VIENNA_AIRBNB, "Bratislava hl. st., Slovakia", "transit")],
+    ["2026-05-21", "Thu", "08:00", "Vienna → Melk (Option 4/4)", "Activity",
+     "Day-trip to Wachau Valley & Melk Abbey — Stift Melk, 3390 Melk (Danube wine region; Baroque abbey; ~1h train + optional Danube boat)",
+     f"From: {VIENNA_AIRBNB} (Airbnb)",
+     "09:15 (est.)", "1h 15m",
+     "Transit to Wien Hauptbahnhof → ICE/RJ to Melk Bahnhof (~1h) | "
+     + gmaps_url(VIENNA_AIRBNB, "Stift Melk, Melk", "transit")],
     ["2026-05-22", "Fri", "06:39", "Vienna → Prague", "Train",
      "RegioJet RJ 1030",
      "Vienna Central Train Station — 06:39",
      "Praha hl.n. — 10:56", "4h 17m",
      "Trainline: https://app.trainline.com/K0MINBRb12b"],
+    # Resolves <can you put details here of the bounce booking ...> placeholder
+    # from info_notes.txt. Source: forwarded Bounce confirmation .eml in
+    # travel_info_data/. Single same-day booking: drop after train arrival,
+    # pick up before heading to Vinohrady Airbnb.
+    ["2026-05-22", "Fri", "", "Prague", "Luggage storage",
+     "Bounce — Cafe Art of Alchemy (Prague Train Station), Opletalova 1418/23, 110 00 Nové Město, Prague",
+     "Drop-off: 2026-05-22 11:00", "Pick-up: 2026-05-22 15:00", "4 hours",
+     "2 regular bags, EUR 13.09 total. Booking ref: F13T68PD. Come INSIDE the café — luggage handled at the counter."],
+    ["2026-05-22", "Fri", "", "Prague", "Tips",
+     "DPP 72-hour pass (250 CZK / ~€10) — metro + tram + bus; tap-and-pay also accepted on trams",
+     "", "", "",
+     "Attractions: Prague Visitor Pass (or CoolPass) bundles Castle + Jewish Museum + tower climbs; Prague Castle basic-loop ticket (~CZK 250); book Old-New Synagogue + Klementinum tour online "
+     "| Explore: trdelník (touristy but iconic), goulash + knedlíky at U Medvídků, Pilsner Urquell beer, Charles Bridge at dawn (avoid crowds), Vinohrady neighbourhood cafés near Airbnb"],
     ["2026-05-22", "Fri", "", "Prague", "Lodging (Airbnb)",
      "Španělská 759/4, 120 00 Vinohrady, Czechia",
      "Check-in: 2026-05-22", "Check-out: 2026-05-26", "4 nights",
@@ -96,6 +229,23 @@ ROWS = [
      "Deutsche Bahn 178 (day-trip outbound)",
      "Praha hl.n. — 08:31", "Dresden Hbf — 10:50", "2h 19m",
      "Trainline: https://app.trainline.com/KXTU6ZSb12b"],
+    ["2026-05-23", "Sat", "", "Dresden", "Tips",
+     "DVB 1-day ticket (~€8.20) for trams + buses; Old Town (Altstadt) is compact and walkable from Hbf via tram 8/9",
+     "", "", "",
+     "Attractions: Dresden Museums Day Card (€25) covers Zwinger + Albertinum + Royal Palace; Frauenkirche entry free (donation); pre-book Historic Green Vault timed-entry online (sells out) "
+     "| Explore: Eierschecke cake, Saxon white wine, Zwinger Old Masters Picture Gallery (Raphael's Sistine Madonna), Brühl's Terrace ('Balcony of Europe') for Elbe views"],
+    # Resolves <can you add details of our river cruise tour? pls refer to the
+    # [EXTERNAL]Fw_ Booking GYGMX4KYLANN confirmed _ Ticket instructions.eml file
+    # in the travel_info_data folder>. Cruise: WEIßE FLOTTE SACHSEN GmbH, 1.5h
+    # English-language sightseeing boat, departs 13:00 from piers 1-7 beneath
+    # Brühlsche Terrasse (meeting point address: Augustusbrücke, Terrassenufer,
+    # 01067 Dresden). Arrive 12:30 (boarding starts ~15 min before departure).
+    ["2026-05-23", "Sat", "12:00", "Dresden", "Activity",
+     "Dresden River Sightseeing Boat Cruise (WEIßE FLOTTE SACHSEN) — meeting point Augustusbrücke, Terrassenufer, 01067 Dresden (piers 1-7 beneath Brühlsche Terrasse)",
+     "From: Dresden Hbf (after 10:50 train arrival)",
+     "12:30 (est.)", "30 min",
+     "Cruise 13:00–14:30 (1.5h, English audio commentary, 2 adults, €54). Booking ref: GYGMX4KYLANN; PIN: =U/7Fj9b. Operator: WEIßE FLOTTE SACHSEN GmbH (+49 351 866090). Tram 3 or 9 from Hbf → Theaterplatz/Synagoge, then short walk to Brühlsche Terrasse piers; arrive by 12:30 (boarding starts ~15 min before departure). Tickets in the GetYourGuide app | "
+     + gmaps_url("Dresden Hbf", "Augustusbrücke, Terrassenufer, 01067 Dresden", "transit")],
     ["2026-05-23", "Sat", "19:10", "Dresden → Prague", "Train",
      "Deutsche Bahn 385 (day-trip return)",
      "Dresden Hbf — 19:10", "Praha hl.n. — 21:25", "2h 15m",
@@ -105,6 +255,11 @@ ROWS = [
      "Prague Václav Havel (PRG), Terminal 2 — 12:10",
      "Stockholm Arlanda (ARN), Terminal 5 — 14:05", "1h 55m",
      "Booking ref: Y9GHBZ; Ticket: 328 2404310661 (Norwegian Air Manolet.pdf)"],
+    ["2026-05-26", "Tue", "", "Stockholm", "Tips",
+     "SL Access 72-hour pass (~SEK 295 / €26) — metro + tram + bus + commuter ferry; airport: Arlanda Express train (~SEK 320 / €28, 18 min) or SL commuter rail (cheaper, ~40 min)",
+     "", "", "",
+     "Attractions: Vasa Museum (~SEK 220) is the single best stop; Skansen open-air museum + Royal Palace; Go City Stockholm Pass for heavy sightseeing "
+     "| Explore: fika culture (coffee + kanelbulle cinnamon bun), Swedish meatballs at Pelikan or Tradition, Gamla Stan cobbled Old Town, Södermalm hipster cafés near hotel, archipelago boat from Strömkajen"],
     ["2026-05-26", "Tue", "", "Stockholm", "Lodging (Hotel)",
      "Bob W Stockholm Södermalm",
      "Check-in: 2026-05-26", "Check-out: 2026-05-30", "4 nights",
@@ -121,7 +276,6 @@ ROWS = [
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "output"
-XLSX_PATH = OUTPUT_DIR / "euro_2026_itinerary.xlsx"
 PDF_PATH = OUTPUT_DIR / "euro_2026_itinerary.pdf"
 
 
@@ -229,10 +383,14 @@ def build_pdf(path: Path) -> None:
 
 
 def main() -> None:
-    build_xlsx(XLSX_PATH)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M")
+    xlsx_path = OUTPUT_DIR / f"euro_2026_itinerary_{timestamp}.xlsx"
+
+    build_xlsx(xlsx_path)
     build_pdf(PDF_PATH)
-    print(f"Saved: {XLSX_PATH}")
-    print(f"Saved: {PDF_PATH}")
+
+    print(f"Saved: {xlsx_path}  (new, retained as version history)")
+    print(f"Saved: {PDF_PATH}  (overwritten)")
     print(f"Rows: {len(ROWS)}")
 
 
