@@ -307,6 +307,43 @@ ROWS = [
      "17:15 (est.)", "15 min",
      "Tram 7 from Djurgården (or metro from Slussen → T-Centralen, 2 stops, ~5 min) → 5 min walk into Gallerian. Covered by 7-day SL pass. Store typically closes 19:00 | "
      + gmaps_url("Slussen, Stockholm", "IKEA City, Gallerian, Hamngatan 37, 111 53 Stockholm", "transit")],
+    # Resolves <on may 27 planning to go to vasa from 10am to 12nn, pls refer
+    # to vasa_ticket.jpg>. Source: that JPG — Stockholm: Vasa Museum and Vrak
+    # Museum of Wrecks Combo Entry, 2 Adults, valid 3 days from Wed May 27
+    # 10:00. Booking ref GYG83XHL69F9.
+    ["2026-05-27", "Wed", "09:30", "Stockholm", "Activity",
+     "Vasa Museum (combo with Vrak Museum of Wrecks) — Galärvarvsvägen 14, 115 21 Stockholm (Djurgården; iconic 17th-century warship, plus museum of Baltic Sea wrecks)",
+     f"From: {BOB_W_ADDR} (Hotel)",
+     "10:00 (est.)", "30 min",
+     "Combo entry valid 3 days from 10:00 on May 27, 2 adults. Booking ref: GYG83XHL69F9 (GetYourGuide app). Plan: Vasa 10:00–12:00. Walk to Slussen → Tram 7 to Nordiska museet/Vasamuseet stop. Covered by 7-day SL pass | "
+     + gmaps_url(BOB_W_ADDR, "Vasa Museum, Galärvarvsvägen 14, 115 21 Stockholm", "transit")],
+    # Resolves <after vasa, we'll have lunch nearby>. Lunch on Djurgården
+    # between the 12:00 Vasa exit and 14:00 ABBA fast-track slot.
+    ["2026-05-27", "Wed", "12:00", "Stockholm", "Activity",
+     "Lunch — Djurgården, 115 21 Stockholm (suggested: Rosendals Trädgård café/bakery, Oaxen Slip, or any of the cafés near Vasa Museum)",
+     "From: Vasa Museum (after 10:00–12:00 visit)",
+     "12:05 (est.)", "5 min",
+     "Light walk, plenty of cafés on Djurgården within 5–10 min. ~1.5h slot before 14:00 ABBA fast-track entry | "
+     + gmaps_url("Vasa Museum, Stockholm", "Rosendals Trädgård, Djurgården, Stockholm", "walking")],
+    # Resolves <... then go abba museum at 2pm. pls refer to
+    # Skansen_and_Abba_tickets.pdf>. Source: that Klook PDF —
+    # ABBA The Museum: Fast Track Ticket, 27 May 2026 14:00, 2 Adults.
+    ["2026-05-27", "Wed", "13:45", "Stockholm", "Activity",
+     "ABBA The Museum — Djurgårdsvägen 68, 115 21 Stockholm (interactive museum on Djurgården)",
+     "From: Djurgården lunch venue",
+     "13:55 (est.)", "10 min",
+     "Fast Track entry: 14:00, 2 adults (Klook PDF). Walk ~10 min from Vasa Museum / Djurgården lunch. Museum admission via Klook ticket; transit covered by 7-day SL pass | "
+     + gmaps_url("Vasa Museum, Stockholm", "ABBA The Museum, Djurgårdsvägen 68, 115 21 Stockholm", "walking")],
+    # Resolves <on may 28, we plan to go to skansen. pls refer to
+    # Skansen_and_Abba_tickets.pdf>. Source: that Klook PDF —
+    # Skansen Open-Air Museum and Nordic Zoo Entry Ticket,
+    # 28 May 2026 10:00, 2 Adults.
+    ["2026-05-28", "Thu", "09:30", "Stockholm", "Activity",
+     "Skansen Open-Air Museum and Nordic Zoo — Djurgårdsslätten 49-51, 115 21 Stockholm (open-air museum showing historic Sweden in miniature; Nordic wildlife)",
+     f"From: {BOB_W_ADDR} (Hotel)",
+     "10:00 (est.)", "30 min",
+     "Entry: 10:00, 2 adults (Klook PDF). Walk to Slussen → Tram 7 to Skansen stop. Covered by 7-day SL pass for transit; admission on the Klook ticket. Plan a half-day; combine with afternoon stroll on Djurgården | "
+     + gmaps_url(BOB_W_ADDR, "Skansen, Djurgårdsslätten 49-51, 115 21 Stockholm", "transit")],
     ["2026-05-30", "Sat", "", "Stockholm → Istanbul", "Flight",
      "Flight J1796",
      "Stockholm Arlanda Airport", "Istanbul", "",
