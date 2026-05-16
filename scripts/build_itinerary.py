@@ -68,6 +68,8 @@ def gmaps_url(origin: str, destination: str, mode: str = "transit") -> str:
 # Common origins reused across activity rows.
 BOUNCE_ADDR = "Wiednergürtel 48/IV, 1040 Wien"
 VIENNA_AIRBNB = "Margaretengürtel 6, 1050 Wien"
+BOB_W_ADDR = "Bob W Stockholm Södermalm, Lundagatan, 117 27 Stockholm"
+PRAGUE_AIRBNB = "Španělská 759/4, 120 00 Vinohrady, Praha"
 
 ROWS = [
     ["2026-05-17", "Sun", "", "Manila → Istanbul", "Flight",
@@ -114,12 +116,17 @@ ROWS = [
      "10:10 (est.)", "25 min",
      "Tour 10:15–12:15. Booking: https://www.guruwalk.com/walks/36416-free-tour-vienna-part-1-the-highlights | U-Bahn U4 from Margaretengürtel → Karlsplatz | "
      + gmaps_url(VIENNA_AIRBNB, "Karlsplatz U-Bahn, 1010 Wien", "transit")],
-    ["2026-05-19", "Tue", "13:30", "Vienna", "Activity",
-     "Belvedere Palace (Upper) — Prinz Eugen-Straße 27, 1030 Wien (Klimt's 'The Kiss'; Baroque palace + gardens)",
-     "From: Karlsplatz / city centre (after walking tour + ~1h lunch break 12:15–13:30)",
-     "13:45 (est.)", "15 min",
-     "Tram D from Karlsplatz → Belvedere (Schloss); allow ~1h lunch between tour end (12:15) and departure | "
-     + gmaps_url("Karlsplatz, 1010 Wien", "Belvedere Palace, Vienna", "transit")],
+    # Resolves <can you update belvedere palace row with details in the
+    # may_19_vienna_belvedere_palace.jpg>. Source: that JPG screenshot —
+    # Upper Belvedere Ticket, 19 May 2026 15:00, 2 x Adult, Belvedere Palace,
+    # Prinz Eugen-Straße 27, 1030 Wien. Time (Depart) shifted to 14:30 to
+    # arrive ~14:45 ahead of the 15:00 timed entry.
+    ["2026-05-19", "Tue", "14:30", "Vienna", "Activity",
+     "Upper Belvedere Palace — Prinz Eugen-Straße 27, 1030 Wien, Austria (Klimt's 'The Kiss'; Baroque palace + gardens)",
+     "From: Karlsplatz / city centre (after walking tour 12:15 + lunch + free time)",
+     "14:45 (est.)", "15 min",
+     "Timed entry: 15:00, 2 adults (voucher in GetYourGuide / Klook app). Tram D from Karlsplatz → Belvedere (Schloss); arrive ~15 min before slot. After tour 12:15 and lunch, ~1h free before departure — gardens around Lower/Upper Belvedere are free | "
+     + gmaps_url("Karlsplatz, 1010 Wien", "Upper Belvedere, Prinz Eugen-Straße 27, 1030 Wien", "transit")],
     ["2026-05-20", "Wed", "07:34", "Vienna → Budapest", "Train",
      "RegioJet RJ 1065",
      "Vienna Central Train Station — 07:34",
@@ -250,20 +257,55 @@ ROWS = [
      "Deutsche Bahn 385 (day-trip return)",
      "Dresden Hbf — 19:10", "Praha hl.n. — 21:25", "2h 15m",
      "Trainline: https://app.trainline.com/Uo4dOhUb12b"],
+    # Resolves <can you put in here details in may_24_prague_castle_guided_tour.jpg?
+    # we'll be coming from the airbnb.>. Source: that JPG screenshot —
+    # Prague Castle Guided Tour, Join-In Tour in English, 24 May 2026 11:00, 2 Adults,
+    # booking ref HWG753830. Meeting point: Malostranská metro station exit,
+    # Valdštejnská, 118 00 Praha 1 (small water fountain landmark out front).
+    # Departure source per user note: the Vinohrady Airbnb.
+    ["2026-05-24", "Sun", "10:30", "Prague", "Activity",
+     "Prague Castle Guided Tour (Join-In, English) — meeting point Malostranská metro station exit, Valdštejnská, 118 00 Praha 1, Czechia",
+     f"From: {PRAGUE_AIRBNB} (Airbnb)",
+     "10:50 (est.)", "20 min",
+     "Tour starts 11:00, 2 adults. Booking ref: HWG753830. Meet guide in front of the Malostranská metro exit (small water fountain landmark, covered in winter). Walk ~5 min to Náměstí Míru → Metro Line A (green) → Malostranská (4 stops, ~10 min) | "
+     + gmaps_url(PRAGUE_AIRBNB, "Malostranská metro, Valdštejnská, 118 00 Praha 1", "transit")],
     ["2026-05-26", "Tue", "12:10", "Prague → Stockholm", "Flight",
      "Norwegian D82621 (Norwegian Air Sweden AOC AB); Ticket type: LOWFARE+; Seat 12C; Baggage: 1 checked + 1 underseat + 1 overhead",
      "Prague Václav Havel (PRG), Terminal 2 — 12:10",
      "Stockholm Arlanda (ARN), Terminal 5 — 14:05", "1h 55m",
      "Booking ref: Y9GHBZ; Ticket: 328 2404310661 (Norwegian Air Manolet.pdf)"],
     ["2026-05-26", "Tue", "", "Stockholm", "Tips",
-     "SL Access 72-hour pass (~SEK 295 / €26) — metro + tram + bus + commuter ferry; airport: Arlanda Express train (~SEK 320 / €28, 18 min) or SL commuter rail (cheaper, ~40 min)",
+     "SL Access 7-day pass (SEK 460 / ~€40) — metro + tram + bus + commuter rail + public ferries (incl. Route 80/82/89); airport: Arlanda Express train (~SEK 320 / €28, 18 min) or SL commuter rail (cheaper, ~40 min)",
      "", "", "",
      "Attractions: Vasa Museum (~SEK 220) is the single best stop; Skansen open-air museum + Royal Palace; Go City Stockholm Pass for heavy sightseeing "
      "| Explore: fika culture (coffee + kanelbulle cinnamon bun), Swedish meatballs at Pelikan or Tradition, Gamla Stan cobbled Old Town, Södermalm hipster cafés near hotel, archipelago boat from Strömkajen"],
-    ["2026-05-26", "Tue", "", "Stockholm", "Lodging (Hotel)",
-     "Bob W Stockholm Södermalm",
-     "Check-in: 2026-05-26", "Check-out: 2026-05-30", "4 nights",
-     "Google Maps: https://maps.app.goo.gl/QzqTafk4EjpTVc577"],
+    # Resolves <can you indicate in the Lodging (Hotel) Bob W Stockholm Södermalm
+    # row departure and arrival? we depart from the airport, say 15 mins after
+    # arrival of our flight>. Flight arrives ARN 14:05 → depart airport 14:20.
+    # ARN → Bob W Södermalm via Arlanda Express (18 min) → metro to Mariatorget
+    # (~12 min incl. walk + wait) → 5 min walk = arrive hotel ~15:15.
+    ["2026-05-26", "Tue", "14:20", "Stockholm", "Lodging (Hotel)",
+     "Bob W Stockholm Södermalm — Lundagatan, 117 27 Stockholm",
+     "Stockholm Arlanda (ARN) — 14:20", "Bob W Södermalm — 15:15 (est.)", "4 nights",
+     "Check-in: 2026-05-26 ~15:15; Check-out: 2026-05-30. Arlanda Express to Stockholm Central (~18 min, SEK 320) → metro T13/T14 to Mariatorget → 5 min walk. Google Maps: https://maps.app.goo.gl/QzqTafk4EjpTVc577"],
+    # Resolves <after we check in at the hotel, we'll go ferry cruising. details
+    # are in May 26 - Stockholm activity details.rtf...>. Source: that .rtf —
+    # SL Route 82 from Slussen, ~1h round-trip Slussen → Skeppsholmen → Djurgården,
+    # views of Gamla Stan, Royal Palace, Djurgården waterfront. Free with 7-day
+    # SL pass (per the user's note in the .rtf). Then Tram 7 / metro to T-Centralen
+    # for IKEA City inside Gallerian.
+    ["2026-05-26", "Tue", "15:45", "Stockholm", "Activity",
+     "SL public ferry Route 82 (sightseeing) — Slussen ferry terminal, Stadsgården 1, 116 45 Stockholm (round trip Slussen → Skeppsholmen → Djurgården; classic water views of Gamla Stan, Royal Palace, Djurgården waterfront, harbour islands)",
+     f"From: {BOB_W_ADDR} (after check-in)",
+     "16:00 (est.)", "15 min",
+     "Walk ~10–15 min from hotel to Slussen ferry terminal (or 1 metro stop on T-bana to Slussen). Ferry covered by 7-day SL pass — €0 marginal cost. Round-trip ~50–60 min hits the user's ~1h sightseeing goal; alternatively hop off briefly at Djurgården before riding back | "
+     + gmaps_url(BOB_W_ADDR, "Slussen ferry terminal, Stadsgården 1, 116 45 Stockholm", "walking")],
+    ["2026-05-26", "Tue", "17:00", "Stockholm", "Activity",
+     "IKEA City — Stockholm Gallerian, Hamngatan 37, 111 53 Stockholm (small-format city store inside Gallerian shopping mall, near T-Centralen)",
+     "From: Slussen ferry terminal (after Route 82 round-trip)",
+     "17:15 (est.)", "15 min",
+     "Tram 7 from Djurgården (or metro from Slussen → T-Centralen, 2 stops, ~5 min) → 5 min walk into Gallerian. Covered by 7-day SL pass. Store typically closes 19:00 | "
+     + gmaps_url("Slussen, Stockholm", "IKEA City, Gallerian, Hamngatan 37, 111 53 Stockholm", "transit")],
     ["2026-05-30", "Sat", "", "Stockholm → Istanbul", "Flight",
      "Flight J1796",
      "Stockholm Arlanda Airport", "Istanbul", "",

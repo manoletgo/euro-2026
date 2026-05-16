@@ -18,6 +18,7 @@ Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Du
 # Second Day in Vienna
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-19	Tue	09:45	Vienna	Activity	GuruWalk 'Free Tour Vienna — Part 1, the highlights' (2-hour free/tip-based walking tour; stops include Heldenplatz, Hofburg, Stephansdom). Meeting point: Karlsplatz U-Bahn station, 1010 Wien, Austria	From: Margaretengürtel 6, 1050 Wien (Airbnb)	10:10 (est.)	25 min	Tour 10:15–12:15. Booking: https://www.guruwalk.com/walks/36416-free-tour-vienna-part-1-the-highlights | U-Bahn U4 from Margaretengürtel → Karlsplatz | https://www.google.com/maps/dir/?api=1&origin=Margareteng%C3%BCrtel%206%2C%201050%20Wien&destination=Karlsplatz%20U-Bahn%2C%201010%20Wien&travelmode=transit
+<can you update belvedere palace row with details in the may_19_vienna_belvedere_palace.jpg>
 2026-05-19	Tue	13:30	Vienna	Activity	Belvedere Palace (Upper) — Prinz Eugen-Straße 27, 1030 Wien (Klimt's 'The Kiss'; Baroque palace + gardens)	From: Karlsplatz / city centre (after walking tour + ~1h lunch break 12:15–13:30)	13:45 (est.)	15 min	Tram D from Karlsplatz → Belvedere (Schloss); allow ~1h lunch between tour end (12:15) and departure | https://www.google.com/maps/dir/?api=1&origin=Karlsplatz%2C%201010%20Wien&destination=Belvedere%20Palace%2C%20Vienna&travelmode=transit
 
 # Third Day in Vienna
@@ -50,19 +51,28 @@ Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Du
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-23	Sat	08:31	Prague → Dresden	Train	Deutsche Bahn 178 (day-trip outbound)	Praha hl.n. — 08:31	Dresden Hbf — 10:50	2h 19m	Trainline: https://app.trainline.com/KXTU6ZSb12b
 
-<can you add details of our river cruise tour? pls refer to the [EXTERNAL]Fw_ Booking GYGMX4KYLANN confirmed _ Ticket instructions.eml file in the travel_info_data folder>
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-23	Sat	12:00	Dresden	Activity	Dresden River Sightseeing Boat Cruise (WEIßE FLOTTE SACHSEN) — meeting point Augustusbrücke, Terrassenufer, 01067 Dresden (piers 1-7 beneath Brühlsche Terrasse)	From: Dresden Hbf (after 10:50 train arrival)	12:30 (est.)	30 min	Cruise 13:00–14:30 (1.5h, English audio commentary, 2 adults, €54). Booking ref: GYGMX4KYLANN; PIN: =U/7Fj9b. Operator: WEIßE FLOTTE SACHSEN GmbH (+49 351 866090). Tram 3 or 9 from Hbf → Theaterplatz/Synagoge, then short walk to Brühlsche Terrasse piers; arrive by 12:30 (boarding starts ~15 min before departure). Tickets in the GetYourGuide app | https://www.google.com/maps/dir/?api=1&origin=Dresden%20Hbf&destination=Augustusbr%C3%BCcke%2C%20Terrassenufer%2C%2001067%20Dresden&travelmode=transit
 
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-23	Sat	19:10	Dresden → Prague	Train	Deutsche Bahn 385 (day-trip return)	Dresden Hbf — 19:10	Praha hl.n. — 21:25	2h 15m	Trainline: https://app.trainline.com/Uo4dOhUb12b
 
 # Third Day in Prague
+<can you put in here details in may_24_prague_castle_guided_tour.jpg? we'll be coming from the airbnb.>
 # Fourth Day in Prague
 # First Day in Stockholm
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
 2026-05-26	Tue	12:10	Prague → Stockholm	Flight	Norwegian D82621 (Norwegian Air Sweden AOC AB); Ticket type: LOWFARE+; Seat 12C; Baggage: 1 checked + 1 underseat + 1 overhead	Prague Václav Havel (PRG), Terminal 2 — 12:10	Stockholm Arlanda (ARN), Terminal 5 — 14:05	1h 55m	Booking ref: Y9GHBZ; Ticket: 328 2404310661 (Norwegian Air Manolet.pdf)
 
+<Note: Stockholm Tips row still references "SL Access 72-hour pass" — the .rtf indicates the user actually has
+  a 7-day pass, but I left the Tips row untouched per the retention rule (no explicit override in
+  info_notes.txt). pls update it in excel>
 Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
-2026-05-26	Tue		Stockholm	Lodging (Hotel)	Bob W Stockholm Södermalm	Check-in: 2026-05-26	Check-out: 2026-05-30	4 nights	Google Maps: https://maps.app.goo.gl/QzqTafk4EjpTVc577
+2026-05-26	Tue	14:20	Stockholm	Lodging (Hotel)	Bob W Stockholm Södermalm — Lundagatan, 117 27 Stockholm	Stockholm Arlanda (ARN) — 14:20	Bob W Södermalm — 15:15 (est.)	4 nights	Check-in: 2026-05-26 ~15:15; Check-out: 2026-05-30. Arlanda Express to Stockholm Central (~18 min, SEK 320) → metro T13/T14 to Mariatorget → 5 min walk. Google Maps: https://maps.app.goo.gl/QzqTafk4EjpTVc577
+
+Date	Day	Time (Depart)	City / Route	Type	Location / Details	Departure	Arrival	Duration	Notes
+2026-05-26	Tue	15:45	Stockholm	Activity	SL public ferry Route 82 (sightseeing) — Slussen ferry terminal, Stadsgården 1, 116 45 Stockholm (round trip Slussen → Skeppsholmen → Djurgården; classic water views of Gamla Stan, Royal Palace, Djurgården waterfront, harbour islands)	From: Bob W Stockholm Södermalm, Lundagatan, 117 27 Stockholm (after check-in)	16:00 (est.)	15 min	Walk ~10–15 min from hotel to Slussen ferry terminal (or 1 metro stop on T-bana to Slussen). Ferry covered by 7-day SL pass — €0 marginal cost. Round-trip ~50–60 min hits the user's ~1h sightseeing goal; alternatively hop off briefly at Djurgården before riding back | https://www.google.com/maps/dir/?api=1&origin=Bob%20W%20Stockholm%20S%C3%B6dermalm%2C%20Lundagatan%2C%20117%2027%20Stockholm&destination=Slussen%20ferry%20terminal%2C%20Stadsg%C3%A5rden%201%2C%20116%2045%20Stockholm&travelmode=walking
+2026-05-26	Tue	17:00	Stockholm	Activity	IKEA City — Stockholm Gallerian, Hamngatan 37, 111 53 Stockholm (small-format city store inside Gallerian shopping mall, near T-Centralen)	From: Slussen ferry terminal (after Route 82 round-trip)	17:15 (est.)	15 min	Tram 7 from Djurgården (or metro from Slussen → T-Centralen, 2 stops, ~5 min) → 5 min walk into Gallerian. Covered by 7-day SL pass. Store typically closes 19:00 | https://www.google.com/maps/dir/?api=1&origin=Slussen%2C%20Stockholm&destination=IKEA%20City%2C%20Gallerian%2C%20Hamngatan%2037%2C%20111%2053%20Stockholm&travelmode=transit
 
 # Second Day in Stockholm
 # Third Day in Stockholm
